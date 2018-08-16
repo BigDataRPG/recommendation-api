@@ -1,0 +1,18 @@
+{% block content %}
+
+<h2>Retrun the result Top 10 Recommendation</h2>
+
+<body>
+
+    <!--<pre>{{ allResult }}</pre>-->
+
+    <ul>
+    {% for eachResult in allResult %}
+        <li>{{ eachResult }}</li>
+    {% endfor %}
+    </ul>
+
+</body>
+
+
+{% endblock %}
