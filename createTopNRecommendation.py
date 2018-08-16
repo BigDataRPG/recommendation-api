@@ -43,13 +43,13 @@ def getTopNBasedOnProductId(predictions, n=10):
     '''
 
     # First map the predictions to each user.
-    topNBasedOnUserId = defaultdict(list)
+    topNBasedOnProductId = defaultdict(list)
     for uid, iid, true_r, est, _ in predictions:
-        topNBasedOnUserId[uid].append((iid, est))
+        topNBasedOnProductId[iid].append((uid, est))
 
     # Then sort the predictions for each user and retrieve the k highest ones.
-    for uid, user_ratings in topNBasedOnUserId.items():
+    for iid, user_ratings in topNBasedOnProductId.items():
         user_ratings.sort(key=lambda x: x[1], reverse=True)
-        topNBasedOnUserId[uid] = user_ratings[:n]
+        topNBasedOnProductId[iid] = user_ratings[:n]
 
-    return topNBasedOnUserId
+    return topNBasedOnProductId

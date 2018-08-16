@@ -1,10 +1,10 @@
 from surprise import KNNBasic
 from surprise import Dataset
 from surprise import Reader
-from top_n_recommendations import getTopNBasedOnUserId
+from createTopNRecommendation import getTopNBasedOnUserId, getTopNBasedOnProductId
 import pandas as pd
 
-def returnAllResultRecommendation():
+def getPredictionFromUserKNN():
 
     # GET DATA AND COLLECT TO PANDAS FORM
     dfRatings = pd.read_csv("/Users/redthegx/PycharmProjects/recommendation-services/resources/input/movie_ratings_data_set.csv")
@@ -21,19 +21,31 @@ def returnAllResultRecommendation():
 
     testset = trainSet.build_anti_testset()
     predictions = algo.test(testset)
+
+    return predictions
+
+def getTopNLeads(predictions):
     top_n = getTopNBasedOnUserId(predictions, n=10)
 
-
-    topNList = []
+    topNLeads = []
     for uid, user_ratings in top_n.items():
         obj = {
             'leadId': uid,
             'productId': ([iid for (iid, _) in user_ratings])
         }
-        topNList.append(obj)
+        topNLeads.append(obj)
 
-    return topNList
+    return topNLeads
 
+def getTopNProducts(predictions):
+    top_n = getTopNBasedOnProductId(predictions, n=10)
 
-if __name__ == "__main__":
-    returnAllResultRecommendation()
+    topNProducts = []
+    for iid, user_ratings in top_n.items():
+        obj = {
+            'productIdRef': iid,
+            'productId': ([iid for (iid, _) in user_ratings])
+        }
+        topNProducts.append(obj)
+
+    return topNProducts
