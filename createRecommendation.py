@@ -7,7 +7,7 @@ import pandas as pd
 def getPredictionFromUserKNN():
 
     # GET DATA AND COLLECT TO PANDAS FORM
-    dfRatings = pd.read_csv("/Users/redthegx/PycharmProjects/recommendation-services/resources/input/movie_ratings_data_set.csv")
+    dfRatings = pd.read_csv("resources/input/movie_ratings_data_set.csv")
 
     # SETTING THE RANGE OF RATTING IN THE PARAMETER NAME READER
     setRangeRatings = Reader(rating_scale=(1, 5))
