@@ -62,12 +62,12 @@ def getOneProductAndProductResultsByProductIDUsingUserCFReccomendation(productsI
 def firstPage():
     #    return name
     quotes = [
-        "'If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is.' -- John Louis von Neumann ",
-        "'Computer science is no more about computers than astronomy is about telescopes' --  Edsger Dijkstra ",
-        "'To understand recursion you must first understand recursion..' -- Unknown",
-        "'You look at things that are and ask, why? I dream of things that never were and ask, why not?' -- Unknown",
+        "'Mathematics is the art of giving the same name to different things.' -- Henri Poincare",
+        "'Computer science is no more about computers than astronomy is about telescopes.' --  Edsger Dijkstra",
+        "'To understand Machine Learning you must first understand Machine Learning.' -- Unknown",
+        "'Pure mathematics is, in its way, the poetry of logical ideas.' -- Albert Einstein",
         "'Mathematics is the key and door to the sciences.' -- Galileo Galilei",
-        "'Not everyone will understand your journey. Thats fine. Its not their journey to make sense of. Its yours.' -- Unknown"]
+        "'Mathematics is the music of reason.' -- James Joseph Sylvester"]
     randomNumber = randint(0, len(quotes) - 1)
     quote = quotes[randomNumber]
     return render_template('index.html',**locals())
