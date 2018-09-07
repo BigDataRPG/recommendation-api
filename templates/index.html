@@ -1,18 +1,12 @@
-{% block content %}
+{% extends "layout.html" %}
+{% block body %}
 
-<h2>Retrun the result Top 10 Recommendation</h2>
-
-<body>
-
-    <!--<pre>{{ allResult }}</pre>-->
-
-    <ul>
-    {% for eachResult in allResult %}
-        <li>{{ eachResult }}</li>
-    {% endfor %}
-    </ul>
-
-</body>
-
-
+<div class="block1">
+<h1>Hello The User</h1>
+  <h2>Here is First page for getting the Recommendation</h2>
+  <p>
+    {{quote}}
+  </p>
+<img src="http://www.naturalprogramming.com/images/smilingpython.gif">
+</div>
 {% endblock %}
