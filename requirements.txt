@@ -6,7 +6,7 @@ cycler==0.10.0
 decorator==4.3.0
 elasticsearch==6.3.0
 Flask==0.12.2
-Flask-Cors==2.1.0
+Flask-Cors==3.0.9
 Flask-RESTful==0.3.4
 Flask-Session==0.3.1
 Flask-SQLAlchemy==2.3.2
