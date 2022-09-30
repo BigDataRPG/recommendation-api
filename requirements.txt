@@ -17,7 +17,7 @@ gunicorn==19.7.1
 idna==2.6
 itsdangerous==0.24
 Jinja2==2.10
-joblib==0.12.2
+joblib==1.2.0
 kiwisolver==1.0.1
 MarkupSafe==1.0
 numpy==1.15.1
