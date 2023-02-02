@@ -36,5 +36,5 @@ SQLAlchemy==1.2.6
 urllib3==1.22
 virtualenv==15.2.0
 virtualenv-clone==0.3.0
-Werkzeug==0.14.1
+Werkzeug==0.15.5
 WTForms==2.1
